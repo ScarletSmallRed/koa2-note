@@ -1,0 +1,33 @@
+{
+  "name": "koa2-note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
+  },
+  "pre-commit": [
+    "lint",
+    "fix"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScarletSmallRed/koa2-note.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScarletSmallRed/koa2-note/issues"
+  },
+  "homepage": "https://github.com/ScarletSmallRed/koa2-note#readme",
+  "dependencies": {
+    "koa": "^2.5.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "pre-commit": "^1.2.2"
+  }
+}
