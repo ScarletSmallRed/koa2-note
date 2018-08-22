@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "start": "nodemon app.js"
   },
   "pre-commit": [
     "lint",
@@ -23,7 +24,15 @@
   },
   "homepage": "https://github.com/ScarletSmallRed/koa2-note#readme",
   "dependencies": {
-    "koa": "^2.5.2"
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-mysql-session": "0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^5.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
