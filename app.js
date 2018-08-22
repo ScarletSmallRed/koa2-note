@@ -7,6 +7,9 @@ const cookieRoutes = require("./routes/cookie")
 const bodyParser = require("koa-bodyparser")
 const staticServer = require("koa-static")
 const path = require("path")
+const session = require("koa-session")
+const sessionCONFIG = require("./config/session-setup")
+const keys = require("./config/keys")
 
 require("./config/session-setup")
 
@@ -19,6 +22,8 @@ app.use(staticServer(
 ))
 app.use(logger())
 app.use(bodyParser())
+app.keys = keys.server.keys
+app.use(session(sessionCONFIG, app))
 router.use("/", homeRoutes.routes(), homeRoutes.allowedMethods())
 router.use("/page", pageRoutes.routes(), pageRoutes.allowedMethods())
 router.use("/cookie", cookieRoutes.routes(), cookieRoutes.allowedMethods())
