@@ -25,7 +25,7 @@ app.use(bodyParser())
 app.keys = keys.server.keys
 app.use(session(sessionCONFIG, app))
 router.use("/", homeRoutes.routes(), homeRoutes.allowedMethods())
-router.use("/page", pageRoutes.routes(), pageRoutes.allowedMethods())
+router.use("/pages", pageRoutes.routes(), pageRoutes.allowedMethods())
 router.use("/cookie", cookieRoutes.routes(), cookieRoutes.allowedMethods())
 app.use(router.routes()).use(router.allowedMethods())
 
