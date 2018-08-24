@@ -10,6 +10,7 @@ const path = require("path")
 const session = require("koa-session")
 const sessionCONFIG = require("./config/session-setup")
 const keys = require("./config/keys")
+const cors = require("./config/cors-setup")
 
 require("./config/session-setup")
 
@@ -17,6 +18,7 @@ const router = new Router()
 const app = new Koa()
 const staticPath = "./static"
 
+app.use(cors)
 app.use(staticServer(
   path.join(__dirname, staticPath)
 ))
@@ -25,7 +27,7 @@ app.use(bodyParser())
 app.keys = keys.server.keys
 app.use(session(sessionCONFIG, app))
 router.use("/", homeRoutes.routes(), homeRoutes.allowedMethods())
-router.use("/pages", pageRoutes.routes(), pageRoutes.allowedMethods())
+router.use("/page", pageRoutes.routes(), pageRoutes.allowedMethods())
 router.use("/cookie", cookieRoutes.routes(), cookieRoutes.allowedMethods())
 app.use(router.routes()).use(router.allowedMethods())
 
